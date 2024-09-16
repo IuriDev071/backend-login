@@ -1,4 +1,24 @@
 const mongoose = require('mongoose')
+<<<<<<< HEAD
+const Router = require('express')
+const axios = require('axios')
+const Controller = require('../Schemas/Register')
+const ControllerLog = require('../Schemas/Login')
+
+mongoose.connect('mongodb+srv://Iuri:admin123@cluster0.ndtwj.mongodb.net/test')
+
+axios.create({baseURL: 'http://localhost:3030/'})
+
+const route = Router()
+
+const userRoute = (route) => {
+
+    route.post('/usuario/', Controller.store)
+
+    route.get('/usuario/login/', ControllerLog.store)
+
+    route.delete('/usuario/remove/', Controller.store)
+=======
 const axios = require('axios')
 const User = require('../Schemas/mongo')
 
@@ -33,6 +53,7 @@ const userRoute = (app) => {
             const usersDel = await User.remove(nome)
             res.status(202, 'Accepted').json(usersDel)
         })
+>>>>>>> master
 }
 
 module.exports = userRoute;
